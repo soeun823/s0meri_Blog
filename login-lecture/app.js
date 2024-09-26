@@ -3,6 +3,7 @@
 
 const http = require("http"); //내장 모듈
 const app = http.createServer( (req, res) => {
+    res.writeHead(200, {"Content-Type" : "text/html; charset=utf-8"});
     if(req.url === "/"){
         res.end("기숙사 가고싶어여");
     }else if(req.url === "/login"){
