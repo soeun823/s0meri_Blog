@@ -1,21 +1,22 @@
 // 서버의 중심 파일 이 될겁니다
 // express 라는 서버 프레임 워크 사용
 
+"use strict";
+
+//모듈
 const express = require("express");
 const app = express();
 
-// 앱 세팅
+const PORT = 3000;
+
+//앱 세팅
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) => {
-    res.render("home/index")
-});
+//라우팅
+const home = require("./routes/home");//상대적으로 명시
+app.use("/",home); //use() -> 미들웨어를 등록 해주는 매서드..
 
-app.get("/login", (req, res) => {
-    res.render("home/login")
-});
-
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("서버 가동");
 });
