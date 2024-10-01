@@ -7,16 +7,13 @@
 const express = require("express");
 const app = express();
 
-const PORT = 3000;
+//라우팅
+const home = require("./routes/home");//상대적으로 명시
 
 //앱 세팅
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
-//라우팅
-const home = require("./routes/home");//상대적으로 명시
 app.use("/",home); //use() -> 미들웨어를 등록 해주는 매서드..
 
-app.listen(PORT, () => {
-    console.log("서버 가동");
-});
+module.exports = app;
