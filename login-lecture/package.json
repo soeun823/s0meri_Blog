@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start" : "node/bin/www.js",
+    "start" : "node ./bin/www.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -18,7 +18,7 @@
     "express": "^4.21.0"
   },
   "bin": {
-    "login-lecture": "bin/www.js"
+    "login-lecture": "www.js"
   },
   "devDependencies": {},
   "description": ""
